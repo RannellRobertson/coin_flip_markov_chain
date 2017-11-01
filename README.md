@@ -1,28 +1,16 @@
-# coin_flip_markov_chain
-# A program demonstrating the concepts of Markov processes
 import numpy as np
 import random as rm
 import time
 
-# Define the statespace
-
 states = ["Heads","Tails"]
-
-# Possible sequences of events
 
 transition_Name = [["HH","HT"],["TT","TH"]]
 
-# Probabilities matrix (Transition Matrix)
-
 transition_Matrix = [[0.5,0.5],[0.2,0.8]]
-
-# Check that probabilities add to 2. If not raise ValueError
 
 if sum(transition_Matrix[0]) + sum(transition_Matrix[1]) != 2:
     print ("Error: Probabilities must add to 1. Please check transition matrix.")
     raise ValueError("Probabilities must add to 1")
-
-# A function which implements the Markov chain model to predict the outcome of a coin toss
 
 def coin_toss(coin_flips):
     # Picking a random state
@@ -46,7 +34,5 @@ def coin_toss(coin_flips):
         print (coin_side)
         i += 1
         time.sleep(0.2)
-
-# Number of coin flips
 
 coin_toss(100)
